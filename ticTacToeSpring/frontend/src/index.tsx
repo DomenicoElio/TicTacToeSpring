@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import {Button, Chip} from "@mui/material";
 
-enum CellStatus { X = 'X', O = 'O', E = 'E' }
+enum CellStatus { X = 'X', O = 'O', EMPTY = 'E' }
 
 enum Player { X = 'X', O = 'O' }
 
@@ -28,7 +28,7 @@ const Game = () => {
 
     const Cell = ({cell, row, col}: { cell: CellStatus, row: number, col: number }) => {
         return <Button
-            onClick={() => cell === CellStatus.E && makeMove(row, col).then(setMove)}
+            onClick={() => cell === CellStatus.EMPTY && makeMove(row, col).then(setMove)}
             color={cell == CellStatus.X ? 'error' : cell == CellStatus.O ? 'success' : 'primary'}
             style={{width: '150px', height: '150px', fontSize: "30px"}}
             variant="contained">
@@ -88,9 +88,9 @@ const Game = () => {
 }
 
 ReactDOM.render(
-  <React.StrictMode>
-      <Game/>
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <Game/>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
