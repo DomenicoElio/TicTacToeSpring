@@ -18,9 +18,9 @@ public class GameMove {
 
     public GameMove() {
         this(new GameLogic());
-    }
+    } //calls game logic and allows for a new move
 
-    public GameMove(GameLogic game) {
+    public GameMove(GameLogic game) { //calls game logic and allows for a new move
         this.player = game.player;
         this.table = GameLogic.serializeTable(game.table);
     }

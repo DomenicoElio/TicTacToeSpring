@@ -77,10 +77,10 @@ public class GameLogic {
     }
 
     public void makeMove(int i, int j) throws InvalidTicTacToeInput {
-        if (i < 0 || i > 2 || j < 0 || j > 2) { // <- Check for out of bounds
+        if (i < 0 || i > 2 || j < 0 || j > 2) { // <- Checking if the move is out of bounds
             throw new InvalidTicTacToeInput("Out of Bounds");
         }
-        if (table[i][j] != CellStatus.EMPTY) { // <- check for already filled
+        if (table[i][j] != CellStatus.EMPTY) { // <- checking if the position is already occupied
             throw new InvalidTicTacToeInput("Position already used");
         }
 

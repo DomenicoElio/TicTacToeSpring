@@ -57,7 +57,7 @@ const Game = () => {
               style={{margin: '20px', fontSize: "30px"}}/>
 
     if (!move)
-        return <div>Caricamento...</div>;
+        return <div>Loading</div>;
 
     return <div style={{textAlign: "center"}}>
         <div>
